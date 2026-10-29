@@ -290,6 +290,7 @@
       }
     };
     toggle.addEventListener('click', function () { setOpen(!isOpen); });
+    qsa('[data-nav-close]', overlay).forEach(function (b) { b.addEventListener('click', function () { setOpen(false); }); });
     links.forEach(function (a) { a.addEventListener('click', function () { if (isOpen) setOpen(false); }); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isOpen) setOpen(false); });
     window.__casamattaNavClose = function () { if (isOpen) setOpen(false); };
